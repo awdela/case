@@ -32,7 +32,7 @@ public class RecursiveTaskTest extends RecursiveTask{
     public static void main(String[] args) {
         //forkjoin任务线程池 跟Executor用法相同
         ForkJoinPool pool = new ForkJoinPool();
-        int result = (int)pool.invoke(new RecursiveTaskTest(5));
+        int result = (int) pool.invoke(new RecursiveTaskTest(5));
         System.out.println(result);
     }
 

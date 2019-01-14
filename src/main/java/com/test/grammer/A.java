@@ -20,7 +20,6 @@ public class A {
         A a = new A();
         a.register(new CallBack() {
 
-            @Override
             public void call() {
                 System.out.println("回调函数被调用");
             }

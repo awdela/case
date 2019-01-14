@@ -24,7 +24,6 @@ public class SynchronizedTest implements Runnable{
 		System.out.println(i);
 	}
 
-	@Override
 	public void run() {
 		for (int j = 0; j < 1000; j++) {
 			increment();

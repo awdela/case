@@ -37,7 +37,6 @@ public class LockSupportTest {
 
     public static void main(String[] args) {
         Thread thread2 = new Thread(new Runnable() {
-            @Override
             public void run() {
                 FIFOMutex fm = new FIFOMutex();
                 fm.lock();

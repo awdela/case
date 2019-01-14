@@ -30,7 +30,6 @@ public class TimeClientHandler implements Runnable {
         }
     }
 
-    @Override
     public void run() {
         try {
             doConnect();
