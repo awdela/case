@@ -1,4 +1,4 @@
-package com.test.Therad;
+package com.test.concurrent;
 
 import java.util.ArrayList;
 import java.util.List;

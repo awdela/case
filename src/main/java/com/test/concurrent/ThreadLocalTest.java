@@ -1,4 +1,4 @@
-package com.test.Therad;
+package com.test.concurrent;
 
 public class ThreadLocalTest {
 
