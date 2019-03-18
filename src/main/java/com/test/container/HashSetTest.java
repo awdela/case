@@ -1,6 +1,7 @@
 package com.test.container;
 
 import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class HashSetTest {
 
@@ -18,7 +19,7 @@ public class HashSetTest {
 //        System.out.println("ts:" + ts.toString());
 
 
-        LinkedHashSet<String> list = new LinkedHashSet<>();
+        Set<String> list = new LinkedHashSet<>();
         list.add("333");
         list.add("111");
         list.add("111");

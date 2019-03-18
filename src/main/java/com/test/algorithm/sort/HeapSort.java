@@ -13,6 +13,11 @@ public class HeapSort{
     public void sort(int[] nums) {
         int len = nums.length;
         buildMaxHeap(nums, len);
+        for(int i = len-1;i>0;i--) {
+            swap(nums, 0, i);
+            len--;
+            heapify(nums, 0, len);
+        }
     }
 
     // 新建最大堆（每个节点的值都大于或等于其子节点的值）
@@ -23,8 +28,8 @@ public class HeapSort{
     }
 
     private void heapify(int[] nums, int i, int len) {
-        int left = i<<1 + 1;
-        int right = i<<1 + 2;
+        int left = (i<<1) + 1;
+        int right = (i<<1) + 2;
         int largest = i;
         if(left<len && nums[left]>nums[largest]) {
             largest = left;
@@ -46,8 +51,8 @@ public class HeapSort{
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[20];
-        for (int i = 0; i < 20; i++) {
+        int[] nums = new int[10];
+        for (int i = 0; i < 10; i++) {
             nums[i] = new Random().nextInt(100);
         }
         new HeapSort().sort(nums);

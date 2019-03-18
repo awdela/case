@@ -11,9 +11,8 @@ public class QuickSort {
      * 快速排序实现
      */
     public static void quickSort(int[] nums) {
-        int low = 0;
         int high = nums.length-1;
-        sort(nums, low, high);
+        sort(nums, 0, high);
     }
 
     public static void sort(int[] nums, int low, int high) {
@@ -32,6 +31,7 @@ public class QuickSort {
             while(pivot>=nums[i] && j>i) {
                 i++;
             }
+
             if (i<j) {
                 swap(nums, i, j);
             }

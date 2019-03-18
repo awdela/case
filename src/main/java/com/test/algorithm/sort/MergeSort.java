@@ -7,10 +7,10 @@ public class MergeSort {
 
     // 待理解
     public int[] sort(int[] arr) {
-        int[] nums = Arrays.copyOf(arr, arr.length);
-        if (nums.length < 2) {
-            return nums;
+        if (arr.length < 2) {
+            return arr;
         }
+        int[] nums = Arrays.copyOf(arr, arr.length);
         int middle = (int) Math.floor(nums.length >> 1);
         int[] left = Arrays.copyOfRange(nums, 0, middle);
         int[] right = Arrays.copyOfRange(nums, middle, nums.length);

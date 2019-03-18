@@ -11,7 +11,8 @@ class Task implements Runnable{
 	public Task(int taskid) {
 		this.taskId = taskid;
 	}
-	public void run() {
+	@Override
+    public void run() {
 		System.out.println(Thread.currentThread()+"---taskId---"+taskId);
 	}
 
@@ -19,7 +20,8 @@ class Task implements Runnable{
 
 class DefaultThreadFactory implements ThreadFactory{
 
-	public Thread newThread(Runnable r) {
+	@Override
+    public Thread newThread(Runnable r) {
 		Thread thread = new Thread(r);
 		try {
 			thread.sleep(200);
@@ -31,6 +33,7 @@ class DefaultThreadFactory implements ThreadFactory{
 	}
 
 }
+
 public class ThreadFactoryTest{
 
 	public static void main(String[] args) {
