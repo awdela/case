@@ -4,34 +4,12 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
-import java.util.Set;
 
 import com.test.tw.trans.Graph.Node;
 
+import java.util.Set;
+
 public class Dijkstra {
-
-    public static Graph getPath(Graph graph, Node target) {
-        target.setDistance(0);
-
-        Set<Node> visitedNodes = new HashSet<>();
-        Set<Node> unvisitedNodes = new HashSet<>();
-
-        unvisitedNodes.add(target);
-        while (unvisitedNodes.size() != 0) {
-            Node currentNode = getShortestDistanceTown(unvisitedNodes);
-            unvisitedNodes.remove(currentNode);
-            for (Entry<Node, Integer> nextTownNodeEntry : currentNode.getNextTownNodes().entrySet()) {
-                Node nextTownNode = nextTownNodeEntry.getKey();
-                Integer distance = nextTownNodeEntry.getValue();
-                if (!unvisitedNodes.contains(nextTownNode)) {
-                    getMinDistance(nextTownNode, distance, currentNode);
-                    unvisitedNodes.add(nextTownNode);
-                }
-            }
-            visitedNodes.add(currentNode);
-        }
-        return graph;
-    }
 
     public static int getPath(Graph graph, Node start, Node target) {
         int shortestDistance = Integer.MAX_VALUE;
@@ -56,7 +34,9 @@ public class Dijkstra {
                         shortestPath.add(target);
                         System.out.println(shortestPath.toString());
                     }
-                    unvisitedNodes.add(nextTownNode);
+                    if (!visitedNodes.contains(nextTownNode)) {
+                        unvisitedNodes.add(nextTownNode);
+                    }
                 }
             }
             visitedNodes.add(currentNode);
@@ -86,6 +66,6 @@ public class Dijkstra {
             shortestPath.add(target);
             nextTownNode.setShortestPath(shortestPath);
         }
-
     }
+
 }

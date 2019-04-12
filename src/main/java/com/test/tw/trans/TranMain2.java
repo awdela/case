@@ -24,6 +24,8 @@ public class TranMain2 {
         nodeD.addNextTown(nodeE, 6);
         nodeD.addNextTown(nodeE, 3);
 
+        nodeE.addNextTown(nodeB, 3);
+
         Graph graph = new Graph();
 
         graph.addNode(nodeA);
@@ -32,7 +34,7 @@ public class TranMain2 {
         graph.addNode(nodeD);
         graph.addNode(nodeE);
 
-        int distance = Dijkstra.getPath(graph, nodeA, nodeE);
+        int distance = Dijkstra.getPath(graph, nodeD, nodeE);
         System.out.println("shortestDistance is "+distance);
     }
 }
